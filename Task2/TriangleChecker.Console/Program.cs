@@ -22,7 +22,7 @@ app.Run((ITriangleTypeProcessor typeProcessor,
     TriangleType result;
     try
     {
-        result = typeProcessor.Process(sideA, sideB, sideC);
+        result = typeProcessor.DetermineTriangleType(sideA, sideB, sideC);
         logger.LogInformation("The provided triangle is '{Type}'!", result);
     }
     catch (Exception ex)

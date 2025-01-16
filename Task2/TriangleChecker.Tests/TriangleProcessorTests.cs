@@ -18,18 +18,18 @@ public class TriangleProcessorTests
     }
 
     [Test]
-    public void Process_InvalidInput_ThrowsException()
+    public void DetermineTriangleType_InvalidInput_ThrowsException()
     {
         _validatorMock.Setup(validator => validator.Validate(It.IsAny<Triangle>()))
             .Returns(false);
 
-        Assert.Throws<ArgumentException>(() => _processor.Process(It.IsAny<Triangle>()));
+        Assert.Throws<ArgumentException>(() => _processor.DetermineTriangleType(It.IsAny<Triangle>()));
     }
 
     [TestCase(3, 3, 3, ExpectedResult = TriangleType.Equilateral)]
     [TestCase(3, 4, 4, ExpectedResult = TriangleType.Isosceles)]
     [TestCase(3, 4, 5, ExpectedResult = TriangleType.Scalene)]
-    public TriangleType Process_ValidInput_ReturnsCorrectType(double sideA, double sideB, double sideC)
+    public TriangleType DetermineTriangleType_ValidInput_ReturnsCorrectType(double sideA, double sideB, double sideC)
     {
         _validatorMock.Setup(validator => validator.Validate(It.IsAny<Triangle>()))
             .Returns(true);
@@ -41,7 +41,7 @@ public class TriangleProcessorTests
             SideC = sideC
         };
 
-        var result = _processor.Process(triangle);
+        var result = _processor.DetermineTriangleType(triangle);
 
         return result;
     }

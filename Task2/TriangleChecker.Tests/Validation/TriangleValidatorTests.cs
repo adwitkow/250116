@@ -30,7 +30,7 @@ public class TriangleValidatorTests
 
         var result = _validator.Validate(triangle);
 
-        Assert.IsTrue(result);
+        Assert.That(result, Is.True);
     }
 
     [TestCase(0, 3, 4)]
@@ -48,6 +48,6 @@ public class TriangleValidatorTests
 
         var result = _validator.Validate(triangle);
 
-        Assert.IsFalse(result);
+        Assert.That(result, Is.False);
     }
 }

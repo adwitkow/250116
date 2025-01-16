@@ -12,7 +12,10 @@ public class TriangleTypeProcessor : ITriangleTypeProcessor
         _validator = validator;
     }
 
-    public TriangleType Process(double sideA, double sideB, double sideC)
+    public TriangleType DetermineTriangleType(
+        double sideA,
+        double sideB,
+        double sideC)
     {
         var triangle = new Triangle
         {
@@ -21,10 +24,10 @@ public class TriangleTypeProcessor : ITriangleTypeProcessor
             SideC = sideC
         };
 
-        return Process(triangle);
+        return DetermineTriangleType(triangle);
     }
 
-    public TriangleType Process(Triangle triangle)
+    public TriangleType DetermineTriangleType(Triangle triangle)
     {
         if (!_validator.Validate(triangle))
         {
