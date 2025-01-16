@@ -1,9 +1,17 @@
 ﻿using TriangleChecker.Model;
+using TriangleChecker.Validation;
 
 namespace TriangleChecker;
 
-internal class TriangleTypeProcessor : ITriangleTypeProcessor
+public class TriangleTypeProcessor : ITriangleTypeProcessor
 {
+    private readonly ITriangleValidator _validator;
+
+    public TriangleTypeProcessor(ITriangleValidator validator)
+    {
+        _validator = validator;
+    }
+
     public TriangleType Process(double sideA, double sideB, double sideC)
     {
         var triangle = new Triangle
@@ -18,6 +26,24 @@ internal class TriangleTypeProcessor : ITriangleTypeProcessor
 
     public TriangleType Process(Triangle triangle)
     {
-        throw new NotImplementedException();
+        if (!_validator.Validate(triangle))
+        {
+            throw new ArgumentException("The provided lengths do not form a valid triangle.");
+        }
+
+        if (triangle.SideA == triangle.SideB
+            && triangle.SideB == triangle.SideC)
+        {
+            return TriangleType.Equilateral;
+        }
+        
+        if (triangle.SideA == triangle.SideB
+            || triangle.SideB == triangle.SideC
+            || triangle.SideA == triangle.SideC)
+        {
+            return TriangleType.Isosceles;
+        }
+
+        return TriangleType.Scalene;
     }
 }
