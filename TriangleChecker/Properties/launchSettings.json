@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TriangleChecker": {
+      "commandName": "Project",
+      "commandLineArgs": "-a 3 -b 4 -c 5"
+    }
+  }
+}
