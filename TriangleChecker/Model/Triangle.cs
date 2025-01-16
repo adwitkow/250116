@@ -1,6 +1,6 @@
 ﻿namespace TriangleChecker.Model;
 
-public struct Triangle
+public readonly struct Triangle
 {
     public required double SideA { get; init; }
 
