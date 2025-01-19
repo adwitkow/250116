@@ -41,21 +41,23 @@ public class WordsReader : IDisposable
 
             for (int i = 0; i < charsRead; i++)
             {
-                if (!char.IsLetter(_buffer[i]))
+                if (char.IsLetter(_buffer[i]))
                 {
-                    if (i > wordStartIndex)
-                    {
-                        string word = ExtractWord(wordStartIndex, i);
-                        yield return word;
-                    }
-                    else if (_leftover is not null)
-                    {
-                        yield return _leftover;
-                        _leftover = string.Empty;
-                    }
-
-                    wordStartIndex = i + 1;
+                    continue;
                 }
+
+                if (i > wordStartIndex)
+                {
+                    string word = ExtractWord(wordStartIndex, i);
+                    yield return word;
+                }
+                else if (_leftover is not null)
+                {
+                    yield return _leftover;
+                    _leftover = null;
+                }
+
+                wordStartIndex = i + 1;
             }
 
             if (wordStartIndex < charsRead)
