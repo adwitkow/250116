@@ -13,6 +13,15 @@ Options:
 ```
 
 ## File reading benchmarks
+
+In most cases: reading files line by line, then splitting on non-word regex to gather all the words.
+
+In the case of WordsReader reading is done word by word, so no additional splits are necessary.
+
+Test files are generated using a constant seed, each line consists of 10-10k words of lorem ipsum (ish)
+* Small: 100 lines (3.24 MB)
+* Large: 50k lines (1.57 GB)
+
 ```
 BenchmarkDotNet v0.14.0, Windows 10 (10.0.19045.5131/22H2/2022Update)
 12th Gen Intel Core i5-12600K, 1 CPU, 16 logical and 10 physical cores
