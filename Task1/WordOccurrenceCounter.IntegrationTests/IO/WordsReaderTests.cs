@@ -7,50 +7,41 @@ namespace WordOccurrenceCounter.IntegrationTests.IO;
 [Category("Integration")]
 public class WordsReaderTests
 {
-    private const int Seed = 42;
-    private const string TestDataDirectory = "TestData";
-
-    private static readonly string Oneliner1Path = Path.Combine(TestDataDirectory, "Oneliner1.txt");
-    private static readonly string Oneliner2Path = Path.Combine(TestDataDirectory, "Oneliner2.txt");
-    private static readonly string OnelinerSpecialPath = Path.Combine(TestDataDirectory, "OnelinerSpecial.txt");
-    private static readonly string LongOnelinerPath = Path.Combine(TestDataDirectory, "LongOneliner.txt");
-    private static readonly string MultipleLinesPath = Path.Combine(TestDataDirectory, "MultipleLines.txt");
-
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
         var faker = new Faker();
-        faker.Random = new Randomizer(Seed);
+        faker.Random = new Randomizer(Constants.Seed);
 
         // 10 million words of lorem ipsum,
         // beginning with a capital letter and ending with a dot.
         var sentence = faker.Lorem.Sentence(10_000_000);
-        File.WriteAllText(LongOnelinerPath, sentence);
+        File.WriteAllText(Constants.LongOnelinerPath, sentence);
 
         // 1k short sentences, each in its own line,
         // formatted in the same manner as above
         var sentences = faker.Lorem.Sentences(1_000);
-        File.WriteAllText(MultipleLinesPath, sentences);
+        File.WriteAllText(Constants.MultipleLinesPath, sentences);
     }
 
     [OneTimeTearDown]
     public void OneTimeTearDown()
     {
-        if (File.Exists(LongOnelinerPath))
+        if (File.Exists(Constants.LongOnelinerPath))
         {
-            File.Delete(LongOnelinerPath);
+            File.Delete(Constants.LongOnelinerPath);
         }
 
-        if (File.Exists(MultipleLinesPath))
+        if (File.Exists(Constants.MultipleLinesPath))
         {
-            File.Delete(MultipleLinesPath);
+            File.Delete(Constants.MultipleLinesPath);
         }
     }
 
     [Test]
     public void ReadWords_OneLiner1()
     {
-        using var reader = new WordsReader(Oneliner1Path);
+        using var reader = new WordsReader(Constants.Oneliner1Path);
         
         var words = reader.ReadWords().ToArray();
 
@@ -61,7 +52,7 @@ public class WordsReaderTests
     [Test]
     public void ReadWords_OneLiner2()
     {
-        using var reader = new WordsReader(Oneliner2Path);
+        using var reader = new WordsReader(Constants.Oneliner2Path);
 
         var words = reader.ReadWords().ToArray();
 
@@ -72,7 +63,7 @@ public class WordsReaderTests
     [Test]
     public void ReadWords_OneLinerWithSpecialCharacters()
     {
-        using var reader = new WordsReader(OnelinerSpecialPath);
+        using var reader = new WordsReader(Constants.OnelinerSpecialPath);
 
         var words = reader.ReadWords().ToArray();
 
@@ -83,7 +74,7 @@ public class WordsReaderTests
     [Test]
     public void ReadWords_LongOneliner()
     {
-        using var reader = new WordsReader(LongOnelinerPath);
+        using var reader = new WordsReader(Constants.LongOnelinerPath);
 
         var words = reader.ReadWords().ToArray();
 
@@ -99,7 +90,7 @@ public class WordsReaderTests
     [Test]
     public void ReadWords_MultipleLines()
     {
-        using var reader = new WordsReader(MultipleLinesPath);
+        using var reader = new WordsReader(Constants.MultipleLinesPath);
 
         var words = reader.ReadWords().ToArray();
 
