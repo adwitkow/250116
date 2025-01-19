@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WordOccurrenceCounter.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "-f ..\\..\\..\\..\\WordOccurrenceCounter.IntegrationTests\\TestData\\Oneliner1.txt -f ..\\..\\..\\..\\WordOccurrenceCounter.IntegrationTests\\TestData\\Oneliner2.txt"
+    }
+  }
+}
