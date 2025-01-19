@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordOccurrenceCounter.Integ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordOccurrenceCounter.Tests", "Task1\WordOccurrenceCounter.Tests\WordOccurrenceCounter.Tests.csproj", "{42236DA9-180C-4C5B-9414-913E0E5AC271}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordOccurrenceCounter.Benchmarks", "Task1\WordOccurrenceCounter.Benchmarks\WordOccurrenceCounter.Benchmarks.csproj", "{9A29F245-BFCE-472D-9882-F66AAE80F0E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{42236DA9-180C-4C5B-9414-913E0E5AC271}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42236DA9-180C-4C5B-9414-913E0E5AC271}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42236DA9-180C-4C5B-9414-913E0E5AC271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A29F245-BFCE-472D-9882-F66AAE80F0E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A29F245-BFCE-472D-9882-F66AAE80F0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A29F245-BFCE-472D-9882-F66AAE80F0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A29F245-BFCE-472D-9882-F66AAE80F0E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +78,6 @@ Global
 		{3B8B7272-E4F1-4E78-8267-219B85CD955C} = {597071AE-6900-4D10-98E9-B85D39821F26}
 		{0DBE0594-463E-4284-9A88-4E568FCBFC8E} = {597071AE-6900-4D10-98E9-B85D39821F26}
 		{42236DA9-180C-4C5B-9414-913E0E5AC271} = {597071AE-6900-4D10-98E9-B85D39821F26}
+		{9A29F245-BFCE-472D-9882-F66AAE80F0E2} = {597071AE-6900-4D10-98E9-B85D39821F26}
 	EndGlobalSection
 EndGlobal
