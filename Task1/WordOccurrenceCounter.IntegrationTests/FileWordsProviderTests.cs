@@ -1,4 +1,6 @@
-﻿namespace WordOccurrenceCounter.IntegrationTests;
+﻿using WordOccurrenceCounter.WordsProvider;
+
+namespace WordOccurrenceCounter.IntegrationTests;
 
 [TestFixture]
 [Category("Integration")]

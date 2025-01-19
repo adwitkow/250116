@@ -1,6 +1,6 @@
 ﻿using WordOccurrenceCounter.IO;
 
-namespace WordOccurrenceCounter;
+namespace WordOccurrenceCounter.WordsProvider;
 
 public class FileWordsProvider : IWordsProvider
 {

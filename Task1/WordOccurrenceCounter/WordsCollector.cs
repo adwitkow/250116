@@ -1,4 +1,6 @@
-﻿namespace WordOccurrenceCounter;
+﻿using WordOccurrenceCounter.WordsProvider;
+
+namespace WordOccurrenceCounter;
 
 public class WordsCollector
 {

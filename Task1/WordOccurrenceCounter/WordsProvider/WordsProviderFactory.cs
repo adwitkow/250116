@@ -1,4 +1,4 @@
-﻿namespace WordOccurrenceCounter;
+﻿namespace WordOccurrenceCounter.WordsProvider;
 
 public class WordsProviderFactory : IWordsProviderFactory
 {

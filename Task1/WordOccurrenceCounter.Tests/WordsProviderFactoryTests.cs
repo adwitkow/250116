@@ -1,4 +1,6 @@
-﻿namespace WordOccurrenceCounter.Tests;
+﻿using WordOccurrenceCounter.WordsProvider;
+
+namespace WordOccurrenceCounter.Tests;
 
 public class WordsProviderFactoryTests
 {

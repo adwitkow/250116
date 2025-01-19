@@ -1,4 +1,5 @@
 ﻿using Moq;
+using WordOccurrenceCounter.WordsProvider;
 
 namespace WordOccurrenceCounter.Tests;
 
